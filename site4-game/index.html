@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Master - Test Your Speed!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <!-- Particles Container -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1 class="game-title">
+                <span class="title-icon">🎮</span>
+                Click Master
+                <span class="title-icon">⚡</span>
+            </h1>
+            <p class="game-subtitle">How fast can you click?</p>
+        </header>
+
+        <!-- Game Stats Bar -->
+        <div class="stats-bar" id="statsBar">
+            <div class="stat-item">
+                <span class="stat-label">Score</span>
+                <span class="stat-value" id="scoreDisplay">0</span>
+            </div>
+            <div class="stat-item timer-stat">
+                <span class="stat-label">Time Left</span>
+                <span class="stat-value" id="timerDisplay">30</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">High Score</span>
+                <span class="stat-value" id="highScoreDisplay">0</span>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area" id="gameArea">
+            <!-- Start Screen -->
+            <div class="screen start-screen" id="startScreen">
+                <div class="screen-content">
+                    <div class="start-icon">🚀</div>
+                    <h2>Ready to Play?</h2>
+                    <p>Click the button as many times as you can in 30 seconds!</p>
+
+                    <div class="difficulty-selector">
+                        <h3>Select Difficulty:</h3>
+                        <div class="difficulty-buttons">
+                            <button class="difficulty-btn active" data-difficulty="easy">
+                                <span class="diff-icon">😊</span>
+                                <span>Easy</span>
+                                <small>30 seconds</small>
+                            </button>
+                            <button class="difficulty-btn" data-difficulty="medium">
+                                <span class="diff-icon">😎</span>
+                                <span>Medium</span>
+                                <small>20 seconds</small>
+                            </button>
+                            <button class="difficulty-btn" data-difficulty="hard">
+                                <span class="diff-icon">🔥</span>
+                                <span>Hard</span>
+                                <small>10 seconds</small>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="start-btn" id="startBtn">
+                        <span class="btn-text">Start Game</span>
+                        <span class="btn-icon">▶</span>
+                    </button>
+
+                    <div class="sound-toggle">
+                        <label>
+                            <input type="checkbox" id="soundToggle" checked>
+                            <span>🔊 Sound Effects</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Playing Screen -->
+            <div class="screen playing-screen hidden" id="playingScreen">
+                <div class="click-counter-display">
+                    <div class="counter-animation" id="clickAnimation">+1</div>
+                </div>
+
+                <button class="click-button" id="clickButton">
+                    <span class="button-text">CLICK ME!</span>
+                    <span class="button-emoji">👆</span>
+                    <div class="button-ripple"></div>
+                </button>
+
+                <div class="combo-display" id="comboDisplay">
+                    <span class="combo-text">COMBO</span>
+                    <span class="combo-count" id="comboCount">0</span>
+                    <div class="combo-bar">
+                        <div class="combo-progress" id="comboProgress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div class="screen gameover-screen hidden" id="gameoverScreen">
+                <div class="screen-content">
+                    <div class="gameover-icon">🏆</div>
+                    <h2 id="resultTitle">Awesome!</h2>
+                    <div class="final-score">
+                        <span class="score-label">Your Score</span>
+                        <span class="score-number" id="finalScore">0</span>
+                    </div>
+
+                    <div class="stats-summary">
+                        <div class="summary-item">
+                            <span class="summary-icon">⚡</span>
+                            <span class="summary-label">Clicks/Second</span>
+                            <span class="summary-value" id="cpsDisplay">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-icon">🔥</span>
+                            <span class="summary-label">Max Combo</span>
+                            <span class="summary-value" id="maxComboDisplay">0</span>
+                        </div>
+                    </div>
+
+                    <div class="new-record hidden" id="newRecord">
+                        <span class="record-icon">🎉</span>
+                        <span class="record-text">NEW HIGH SCORE!</span>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn primary-btn" id="playAgainBtn">
+                            <span>Play Again</span>
+                            <span>🔄</span>
+                        </button>
+                        <button class="action-btn secondary-btn" id="viewLeaderboardBtn">
+                            <span>Leaderboard</span>
+                            <span>📊</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard Screen -->
+            <div class="screen leaderboard-screen hidden" id="leaderboardScreen">
+                <div class="screen-content">
+                    <h2>🏆 Leaderboard</h2>
+                    <div class="leaderboard-container">
+                        <table class="leaderboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Score</th>
+                                    <th>Difficulty</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboardBody">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                        <div class="no-scores hidden" id="noScores">
+                            <p>No scores yet. Play to set a record!</p>
+                        </div>
+                    </div>
+                    <button class="action-btn primary-btn" id="backToMenuBtn">
+                        <span>← Back to Menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <details>
+                <summary>📖 How to Play</summary>
+                <ul>
+                    <li>🎯 Click the button as fast as you can</li>
+                    <li>⏱️ Beat the clock before time runs out</li>
+                    <li>🔥 Build combos for bonus points</li>
+                    <li>🏆 Compete for the highest score</li>
+                    <li>🎮 Choose difficulty: Easy (30s), Medium (20s), Hard (10s)</li>
+                </ul>
+            </details>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="game-footer">
+        <p>&copy; 2025 Click Master | Built with HTML, CSS & JavaScript</p>
+        <p>Deployed on Azure Static Web Apps</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

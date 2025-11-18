@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegan Delights - Plant-Based Recipe Collection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="leaf-icon">🌱</span>
+                Vegan Delights
+            </h1>
+            <p class="hero-subtitle">Delicious plant-based recipes for a healthier you</p>
+            <button class="scroll-down" id="scrollDown">
+                Explore Recipes ↓
+            </button>
+        </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <nav class="filter-bar">
+        <div class="container">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="filter-icon">🍽️</span>
+                    All Recipes
+                </button>
+                <button class="filter-btn" data-filter="breakfast">
+                    <span class="filter-icon">🥞</span>
+                    Breakfast
+                </button>
+                <button class="filter-btn" data-filter="lunch">
+                    <span class="filter-icon">🥗</span>
+                    Lunch
+                </button>
+                <button class="filter-btn" data-filter="dinner">
+                    <span class="filter-icon">🍜</span>
+                    Dinner
+                </button>
+                <button class="filter-btn" data-filter="dessert">
+                    <span class="filter-icon">🍰</span>
+                    Dessert
+                </button>
+            </div>
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="grid" title="Grid View">
+                    <span>⊞</span>
+                </button>
+                <button class="view-btn" data-view="list" title="List View">
+                    <span>☰</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="intro-section">
+                <h2>Wholesome Plant-Based Cooking</h2>
+                <p>Discover our curated collection of nutritious, delicious, and easy-to-make vegan recipes. Each dish is crafted with love and packed with flavor!</p>
+            </section>
+
+            <!-- Recipe Grid -->
+            <div class="recipes-grid" id="recipesGrid">
+                <!-- Recipe 1 -->
+                <article class="recipe-card" data-category="breakfast">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="recipe-image">
+                                <div class="image-placeholder">🥞</div>
+                                <div class="recipe-badge">Breakfast</div>
+                            </div>
+                            <div class="recipe-content">
+                                <h3 class="recipe-title">Fluffy Banana Pancakes</h3>
+                                <p class="recipe-description">Light and fluffy pancakes made with ripe bananas and oat flour</p>
+                                <div class="recipe-meta">
+                                    <span class="meta-item">
+                                        <span class="meta-icon">⏱️</span>
+                                        15 min
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">👥</span>
+                                        2 servings
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">🔥</span>
+                                        Easy
+                                    </span>
+                                </div>
+                                <button class="flip-btn" data-recipe="0">View Recipe →</button>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="recipe-details">
+                                <h3>Fluffy Banana Pancakes</h3>
+                                <div class="ingredients">
+                                    <h4>Ingredients:</h4>
+                                    <ul>
+                                        <li>2 ripe bananas, mashed</li>
+                                        <li>1 cup oat flour</li>
+                                        <li>1 cup almond milk</li>
+                                        <li>1 tsp baking powder</li>
+                                        <li>1 tsp vanilla extract</li>
+                                        <li>Pinch of cinnamon</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4>Instructions:</h4>
+                                    <ol>
+                                        <li>Mix mashed bananas with milk and vanilla</li>
+                                        <li>Add flour, baking powder, and cinnamon</li>
+                                        <li>Heat pan and pour batter</li>
+                                        <li>Cook until bubbles form, then flip</li>
+                                        <li>Serve with maple syrup and berries</li>
+                                    </ol>
+                                </div>
+                                <button class="flip-btn" data-recipe="0">← Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Recipe 2 -->
+                <article class="recipe-card" data-category="lunch">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="recipe-image">
+                                <div class="image-placeholder">🥗</div>
+                                <div class="recipe-badge">Lunch</div>
+                            </div>
+                            <div class="recipe-content">
+                                <h3 class="recipe-title">Rainbow Buddha Bowl</h3>
+                                <p class="recipe-description">Colorful bowl packed with quinoa, roasted veggies, and tahini dressing</p>
+                                <div class="recipe-meta">
+                                    <span class="meta-item">
+                                        <span class="meta-icon">⏱️</span>
+                                        30 min
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">👥</span>
+                                        2 servings
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">🔥</span>
+                                        Medium
+                                    </span>
+                                </div>
+                                <button class="flip-btn" data-recipe="1">View Recipe →</button>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="recipe-details">
+                                <h3>Rainbow Buddha Bowl</h3>
+                                <div class="ingredients">
+                                    <h4>Ingredients:</h4>
+                                    <ul>
+                                        <li>1 cup quinoa, cooked</li>
+                                        <li>1 sweet potato, cubed</li>
+                                        <li>1 cup chickpeas</li>
+                                        <li>2 cups kale, massaged</li>
+                                        <li>1 avocado, sliced</li>
+                                        <li>3 tbsp tahini dressing</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4>Instructions:</h4>
+                                    <ol>
+                                        <li>Roast sweet potato and chickpeas at 400°F for 25 min</li>
+                                        <li>Cook quinoa according to package</li>
+                                        <li>Massage kale with lemon juice</li>
+                                        <li>Assemble bowl with all ingredients</li>
+                                        <li>Drizzle with tahini dressing</li>
+                                    </ol>
+                                </div>
+                                <button class="flip-btn" data-recipe="1">← Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Recipe 3 -->
+                <article class="recipe-card" data-category="dinner">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="recipe-image">
+                                <div class="image-placeholder">🍜</div>
+                                <div class="recipe-badge">Dinner</div>
+                            </div>
+                            <div class="recipe-content">
+                                <h3 class="recipe-title">Creamy Mushroom Pasta</h3>
+                                <p class="recipe-description">Rich and creamy pasta with sautéed mushrooms and cashew sauce</p>
+                                <div class="recipe-meta">
+                                    <span class="meta-item">
+                                        <span class="meta-icon">⏱️</span>
+                                        25 min
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">👥</span>
+                                        4 servings
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">🔥</span>
+                                        Easy
+                                    </span>
+                                </div>
+                                <button class="flip-btn" data-recipe="2">View Recipe →</button>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="recipe-details">
+                                <h3>Creamy Mushroom Pasta</h3>
+                                <div class="ingredients">
+                                    <h4>Ingredients:</h4>
+                                    <ul>
+                                        <li>12 oz pasta of choice</li>
+                                        <li>2 cups mushrooms, sliced</li>
+                                        <li>1 cup cashews, soaked</li>
+                                        <li>1 cup vegetable broth</li>
+                                        <li>3 cloves garlic, minced</li>
+                                        <li>2 tbsp nutritional yeast</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4>Instructions:</h4>
+                                    <ol>
+                                        <li>Cook pasta according to package directions</li>
+                                        <li>Blend cashews with broth until creamy</li>
+                                        <li>Sauté mushrooms and garlic until golden</li>
+                                        <li>Add cashew cream and nutritional yeast</li>
+                                        <li>Toss with pasta and serve hot</li>
+                                    </ol>
+                                </div>
+                                <button class="flip-btn" data-recipe="2">← Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Recipe 4 -->
+                <article class="recipe-card" data-category="dessert">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="recipe-image">
+                                <div class="image-placeholder">🍰</div>
+                                <div class="recipe-badge">Dessert</div>
+                            </div>
+                            <div class="recipe-content">
+                                <h3 class="recipe-title">Chocolate Avocado Mousse</h3>
+                                <p class="recipe-description">Decadent chocolate mousse made silky smooth with avocado</p>
+                                <div class="recipe-meta">
+                                    <span class="meta-item">
+                                        <span class="meta-icon">⏱️</span>
+                                        10 min
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">👥</span>
+                                        4 servings
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">🔥</span>
+                                        Easy
+                                    </span>
+                                </div>
+                                <button class="flip-btn" data-recipe="3">View Recipe →</button>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="recipe-details">
+                                <h3>Chocolate Avocado Mousse</h3>
+                                <div class="ingredients">
+                                    <h4>Ingredients:</h4>
+                                    <ul>
+                                        <li>2 ripe avocados</li>
+                                        <li>1/3 cup cocoa powder</li>
+                                        <li>1/4 cup maple syrup</li>
+                                        <li>1/4 cup almond milk</li>
+                                        <li>1 tsp vanilla extract</li>
+                                        <li>Pinch of sea salt</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4>Instructions:</h4>
+                                    <ol>
+                                        <li>Blend all ingredients until smooth</li>
+                                        <li>Taste and adjust sweetness if needed</li>
+                                        <li>Chill in refrigerator for 30 minutes</li>
+                                        <li>Serve with fresh berries</li>
+                                        <li>Enjoy this guilt-free treat!</li>
+                                    </ol>
+                                </div>
+                                <button class="flip-btn" data-recipe="3">← Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Recipe 5 -->
+                <article class="recipe-card" data-category="breakfast">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="recipe-image">
+                                <div class="image-placeholder">🥤</div>
+                                <div class="recipe-badge">Breakfast</div>
+                            </div>
+                            <div class="recipe-content">
+                                <h3 class="recipe-title">Green Power Smoothie</h3>
+                                <p class="recipe-description">Energizing smoothie with spinach, mango, and chia seeds</p>
+                                <div class="recipe-meta">
+                                    <span class="meta-item">
+                                        <span class="meta-icon">⏱️</span>
+                                        5 min
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">👥</span>
+                                        1 serving
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="meta-icon">🔥</span>
+                                        Easy
+                                    </span>
+                                </div>
+                                <button class="flip-btn" data-recipe="4">View Recipe →</button>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="recipe-details">
+                                <h3>Green Power Smoothie</h3>
+                                <div class="ingredients">
+                                    <h4>Ingredients:</h4>
+                                    <ul>
+                                        <li>2 cups fresh spinach</li>
+                                        <li>1 cup frozen mango</li>
+                                        <li>1 banana</li>
+                                        <li>1 cup coconut water</li>
+                                        <li>1 tbsp chia seeds</li>
+                                        <li>1 tsp spirulina (optional)</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4>Instructions:</h4>
+                                    <ol>
+                                        <li>Add all ingredients to blender</li>
+                                        <li>Blend on high until smooth</li>
+                                        <li>Add more liquid if too thick</li>
+                                        <li>Pour into glass</li>
+                                        <li>Enjoy immediately for best taste!</li>
+                                    </ol>
+                                </div>
+                                <button class="flip-btn" data-recipe="4">← Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results hidden" id="noResults">
+                <span class="no-results-icon">🔍</span>
+                <h3>No recipes found</h3>
+                <p>Try selecting a different category</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Vegan Delights | Plant-based recipes made with ❤️</p>
+            <p>Deployed on Vercel</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
